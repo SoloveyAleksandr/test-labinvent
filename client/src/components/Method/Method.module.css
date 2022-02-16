@@ -1,0 +1,348 @@
+.method {
+  background-color: #fff;
+  border: 1px solid #797a7a;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #797a7a;
+}
+
+.headerInfoList {
+  display: flex;
+  align-items: center;
+  background-color: #f1f3f2;
+  padding: 15px;
+}
+
+.headerInfoListTitle {
+  text-transform: uppercase;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.runBtn {
+  color: #2574a9;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  margin-right: 25px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.runBtn.stopped {
+  color: #d10000;
+}
+
+.runBtnIcon {
+  margin-right: 5px;
+}
+
+.headerTodoInfo {
+  margin-right: 30px;
+}
+
+.headerTodoInfoTitle {
+  text-transform: uppercase;
+  color: #797a7a;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.headerTodoInfoName {
+  font-weight: 500;
+}
+
+.headerInfoListTimer {
+  font-weight: 500;
+  margin-right: 25px;
+}
+
+.headerTabsBtnsList {
+  display: flex;
+}
+
+.headerTabBtn {
+  min-width: 170px;
+  border: 1px solid #bdc9d1;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  padding: 15px;
+  background-color: #f1f3f2;
+  cursor: pointer;
+}
+
+.headerTabBtn.activeHeaderTab {
+  background-color: #fff;
+}
+
+.headerTabBtnTitle {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.headerTabBtnName {
+  font-weight: 400;
+}
+
+.methodTab {
+  display: flex;
+}
+
+.methodTabBtnsList {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  border-right: 1px solid #797a7a;
+  background-color: #f1f3f2;
+}
+
+.methodTabBtn {
+  padding: 10px;
+  font-weight: 500;
+  border-bottom: 1px solid #797a7a;
+  cursor: pointer;
+}
+
+.methodTabBtn.activeMetodTab {
+  background-color: #fff;
+}
+
+.tabContentList {
+  width: calc(50% - 75px);
+  border-right: 1px solid #797a7a;
+}
+
+.tabContentListItem {
+  display: none;
+}
+
+.tabContentListItem.activeContentItem {
+  display: block;
+}
+
+.columnsGeneralInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.workSequenceList {
+  display: flex;
+  margin: 30px 0;
+}
+
+.workSequenceList li + li {
+  margin-left: 40px;
+}
+
+.workSequenceItem {
+  max-width: 115px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.workSequenceItemTitle {
+  color: #979da5;
+  font-size: 10px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.workSequenceItemImg {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.workSequenceItemImg img {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.workSequenceArrow {
+  position: absolute;
+  left: -75px;
+}
+
+.workSequenceDescription {
+  font-size: 12px;
+  font-weight: 400;
+  color: #2f3b4c;
+  text-align: center;
+}
+
+.workSequenceDescription.bold {
+  font-weight: 700;
+}
+
+.columnsTableInfoList {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #2f3b4c;
+  padding: 10px;
+  margin: 30px 0;
+}
+
+.columnsTableInfoList li + li {
+  margin-top: 8px;
+}
+
+.columnsTableInfoListItem {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2f3b4c;
+}
+
+.controlMode {
+  color: #727272;
+  padding: 15px;
+}
+
+.controlModeInnerWrapper {
+  padding: 20px;
+}
+
+.controlModeCheckBoxWrapper {
+  margin-bottom: 15px;
+}
+
+.controlModeInfoList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controlModeInfoListItem {
+  width: 220px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.controlModeInfoListTitle {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.controlModeInfoListValueBox {
+  width: 115px;
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+}
+
+.controlModeInfoListValue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 25px;
+  border: 1px solid #727272;
+  color: #2f3b4c;
+  margin-right: 5px;
+  font-weight: 500;
+}
+
+.controlModeInfoListUnit {
+  font-weight: 400;
+}
+
+.controlModeCheckBoxWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.controlModeCheckBoxWrapper input {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.controlModeCheckBoxWrapper label {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.columnsPostRun {
+  color: #727272;
+  padding: 15px;
+}
+
+.columnsPostRunBox {
+  padding: 20px;
+}
+
+.methodTabSettings {
+  background-color: #fff;
+  width: calc(50% - 75px);
+}
+
+.methodTabSettingsTitle {
+  padding: 15px;
+}
+
+.methodTabSettingsRadioBtnsList {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.methodTabSettingsRadioBtn {
+  display: flex;
+  align-items: center;
+}
+
+.methodTabSettingsRadioBtn input {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.methodTabSettingsTable {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.settingsTable {
+  width: 100%;
+  font-size: 12px;
+}
+
+.settingsTable td {
+  border: 1px solid #979da5;
+}
+
+.settingsTableHeader {
+  background-color: #61a1c4;
+  color: #fff;
+  text-align: center;
+}
+
+.settingsTableRow {
+  padding: 10px;
+  font-weight: 500;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}

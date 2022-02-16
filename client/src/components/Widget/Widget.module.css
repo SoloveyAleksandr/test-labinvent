@@ -1,0 +1,24 @@
+.widget {
+  width: 190px;
+  height: 190px;
+  border: 1px solid #bfc2c4;
+}
+
+.widgetName {
+  display: flex;
+  align-items: center;
+  padding: 10px 6px;
+  border-bottom: 1px solid #bfc2c4;
+}
+
+.widgetColor {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+}
+
+.widgetTitle {
+  font-size: 12px;
+  font-weight: 500;
+}

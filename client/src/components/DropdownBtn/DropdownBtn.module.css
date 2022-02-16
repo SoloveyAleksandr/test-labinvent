@@ -1,0 +1,41 @@
+.DropdownBtn {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  background-color: transparent;
+  color: inherit;
+  font-size: inherit;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.btnTitle {
+  margin-right: 10px;
+}
+
+.btnIcon {
+  transition: 0.3s;
+}
+
+.content {
+  position: absolute;
+  padding: 15px;
+  border-radius: 10px;
+  top: 20px;
+  transition: 0.3s;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1000;
+  box-shadow: 0 0 5px 0px #dcdddd;
+  background-color: #fff;
+}
+
+.DropdownBtn:hover .content {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.DropdownBtn:hover .btnIcon {
+  transform: rotate(-180deg);
+}

@@ -1,0 +1,123 @@
+.header {
+  box-shadow: 0 0 5px 0px #dcdddd;
+  color: #727272;
+  font-size: 16px;
+  width: calc(100% - 280px);
+  position: fixed;
+  top: 0;
+  left: 280px;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+.innerWrapper {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigationList {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.navigationList li + li {
+  margin-left: 65px;
+}
+
+.menuBtn {
+  margin-right: 54px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuBtnBurger {
+  position: relative;
+}
+
+.menuBtnBurger,
+.menuBtnBurger::before,
+.menuBtnBurger::after {
+  display: block;
+  width: 21px;
+  height: 3px;
+  background-color: #afb0c3;
+  transition: 0.5s;
+}
+
+.menuBtnBurger::before,
+.menuBtnBurger::after {
+  content: "";
+  position: absolute;
+}
+
+.menuBtnBurger::before {
+  top: -6px;
+}
+
+.menuBtnBurger::after {
+  top: 6px;
+}
+
+.menuBtnBurger.isOpen {
+  transform: rotate(135deg);
+}
+
+.menuBtnBurger.isOpen::before,
+.menuBtnBurger.isOpen::after {
+  top: 0px;
+  transform: rotate(90deg);
+}
+
+.instrumentsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.instrumentsList li + li {
+  margin: 0;
+}
+
+.instrumentsListItem {
+  min-width: 100px;
+}
+
+.userControlsList {
+  display: flex;
+  align-items: center;
+}
+
+.userControlsListItem {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 20px;
+  margin-left: 20px;
+  border-left: 1px solid #e1e7f0;
+}
+
+.userControlsBtn {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  border: none;
+}
+
+.userControlsBtnIcon {
+  margin-right: 10px;
+}
