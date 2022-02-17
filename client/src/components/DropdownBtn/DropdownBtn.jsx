@@ -2,7 +2,6 @@ import Icon from '../Icon/Icon';
 import arrow from '../../images/arrow.svg';
 
 import styles from './DropdownBtn.module.css';
-import { useState } from 'react';
 
 function DropdownBtn({
   title,

@@ -1,0 +1,13 @@
+.btnBig {
+    border          : none;
+    background-color: #2574a9;
+    margin          : 0;
+    padding         : 10px;
+    font-weight     : 400;
+    color           : #fff;
+    width           : 100px;
+    text-align      : center;
+    line-height     : 100%;
+    border-radius   : 50px;
+    cursor          : pointer;
+}

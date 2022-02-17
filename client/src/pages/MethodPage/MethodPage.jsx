@@ -1,15 +1,77 @@
-import { useState } from 'react';
 import Icon from '../../components/Icon/Icon';
 import Widget from '../../components/Widget/Widget';
 import samplerIcon from '../../images/sampler-icon.svg';
 import bottleFilling from '../../images/bottle_filling_sprite.svg';
 import arrowIcon from '../../images/arrow.svg';
 import Method from '../../components/Method/Method';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import {
+  OPEN_CURRENT_METHOD_URL,
+  OPEN_SAVED_METHODS_URL,
+  SAVE_METHOD,
+} from '../../constants';
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  setCurrentMethod,
+  addTableStap,
+  changeTableInputValue,
+  changeTableInputRadio,
+} from '../../store';
 
 import styles from './MethodPage.module.css';
 
 function MethodPage() {
+  const reduxDispatch = useDispatch();
+  const store = useSelector(store => store.AppStore);
+
   const [widgetIsOpen, setWidgetIsOpen] = useState(false);
+
+  useEffect(() => {
+    axios.get(OPEN_CURRENT_METHOD_URL).then((resp) => {
+      const currentMethod = resp.data;
+      reduxDispatch(setCurrentMethod(currentMethod));
+    });
+  }, [])
+
+
+
+  function addStep() {
+    reduxDispatch(addTableStap({
+      "selected": false,
+      "ramp": '',
+      "rate": '',
+      "value": '',
+      "holdTime": '',
+      "runTime": '',
+    }))
+  }
+
+  function changeTableInput(e, index, name) {
+    reduxDispatch(changeTableInputValue({
+      index: index,
+      value: e.target.value,
+      name: name,
+    }))
+  }
+
+  function changeTableRadio(index) {
+    reduxDispatch(changeTableInputRadio(index))
+  }
+
+  async function saveMethod() {
+    await axios.post(SAVE_METHOD, state.currentMethod, {
+      headers: 'Content-Type: application/json',
+    }).then((response) => {
+      console.log(response);
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+
+  // async function checkSaved() {
+  //   await axios.get(SAVED_METHODS_URL)
+  // }
 
   return (
     <div className={styles.methodPage}>
@@ -51,7 +113,13 @@ function MethodPage() {
         <div className={widgetIsOpen ?
           `${styles.pageBody} ${styles.isOpen}` :
           styles.pageBody}>
-          <Method />
+          <Method
+            currentMethod={store.currentMethod}
+            addTableRow={addStep}
+            changeInputText={(e, index, name) => changeTableInput(e, index, name)}
+            changeRadioState={(index) => changeTableRadio(index)}
+            saveMethod={saveMethod}
+          />
         </div>
       </div>
     </div >
