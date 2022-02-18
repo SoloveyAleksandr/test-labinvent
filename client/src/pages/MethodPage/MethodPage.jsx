@@ -60,18 +60,23 @@ function MethodPage() {
   }
 
   async function saveMethod() {
-    await axios.post(SAVE_METHOD, state.currentMethod, {
-      headers: 'Content-Type: application/json',
-    }).then((response) => {
-      console.log(response);
-    }).catch((err) => {
-      console.log(err)
-    })
+    // await axios.post(SAVE_METHOD,
+    //   store.currentMethod, {
+    //   headers: { 'Content-Type': 'application/json' },
+    // }).then((response) => {
+    //   console.log(response);
+    // }).catch((err) => {
+    //   console.log(err)
+    // })
+    console.log('save');
   }
 
-  // async function checkSaved() {
-  //   await axios.get(SAVED_METHODS_URL)
-  // }
+  async function checkSaved() {
+    await axios.get(OPEN_SAVED_METHODS_URL)
+      .then(response => {
+        console.log(response.data)
+      })
+  }
 
   return (
     <div className={styles.methodPage}>
@@ -119,6 +124,7 @@ function MethodPage() {
             changeInputText={(e, index, name) => changeTableInput(e, index, name)}
             changeRadioState={(index) => changeTableRadio(index)}
             saveMethod={saveMethod}
+            checkSaved={checkSaved}
           />
         </div>
       </div>

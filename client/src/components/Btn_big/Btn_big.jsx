@@ -1,13 +1,16 @@
 import styles from './Btn_big.module.css';
 
 function Btn_big({
+    isFill = true,
     text = 'button',
     handleClick,
 }) {
     return (
         <button
             onClick={handleClick}
-            className={styles.btnBig}>
+            className={isFill ?
+                `${styles.btnBig} ${styles.btnBigIsFill}` :
+                styles.btnBig}>
             {text}
         </button>
     );

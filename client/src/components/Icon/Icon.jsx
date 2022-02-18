@@ -1,11 +1,8 @@
-import styles from './Icon.module.css';
+import IcoMoon from "react-icomoon";
+const iconSet = require("./selection.json");
 
-function Icon({ image }) {
-  return (
-    <div className={styles.icon}>
-      <img src={image} alt="icon" />
-    </div>
-  );
-}
+const Icon = ({ ...props }) => {
+    return <IcoMoon iconSet={iconSet} {...props} />;
+};
 
 export default Icon;

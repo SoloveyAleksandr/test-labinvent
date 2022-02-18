@@ -1,4 +1,4 @@
-import Icon from '../Icon/Icon';
+import Image from '../Image/Image';
 import runIcon from '../../images/runIcon.png';
 import stoppedIcon from '../../images/stoppedIcon.png';
 import inletsImg from '../../images/inlets.png';
@@ -7,9 +7,11 @@ import detectorImg from '../../images/detector.png';
 import sequenceArrow from '../../images/bigArrow.png';
 import TitleWhithLine from '../TitleWhithLine/TitleWhithLine';
 import { v4 as uuid } from 'uuid';
+import Btn_big from '../Btn_big/Btn_big';
+import Btn_small from '../Btn_small/Btn_small';
+import Icon from '../Icon/Icon';
 
 import styles from './Method.module.css';
-import Btn_big from '../Btn_big/Btn_big';
 
 function Method({
   currentMethod,
@@ -17,6 +19,7 @@ function Method({
   changeInputText,
   changeRadioState,
   saveMethod,
+  checkSaved,
 }) {
 
   function getTime(value) {
@@ -362,9 +365,25 @@ function Method({
       </div>
 
       <div className={styles.methodTabButns}>
-        <Btn_big
-          text='Save'
-          handleClick={saveMethod} />
+        <div>
+          <Btn_small
+            icon={<Icon icon={'newIcon'} />} />
+          <Btn_small
+          />
+        </div>
+
+        <div>
+          <Btn_big
+            text='Save'
+            handleClick={saveMethod}
+            isFill={true} />
+          <Btn_big
+            text='Save as'
+            isFill={true} />
+          <Btn_big
+            text='Cancel'
+            isFill={false} />
+        </div>
       </div>
 
     </div >
