@@ -17,3 +17,14 @@
     background-color: #2574a9;
     color           : #fff;
 }
+
+.btn_small.isFill {
+    border-color    : #2574a9;
+    background-color: #2574a9;
+    color           : #fff;
+}
+
+.btn_small.isFill:hover {
+    color           : #2574a9;
+    background-color: #fff;
+}

@@ -22,25 +22,6 @@
   font-weight   : 500;
 }
 
-.runBtn {
-  color           : #2574a9;
-  display         : flex;
-  align-items     : center;
-  border          : none;
-  background-color: transparent;
-  margin-right    : 25px;
-  cursor          : pointer;
-  font-weight     : 500;
-}
-
-.runBtn.stopped {
-  color: #d10000;
-}
-
-.runBtnIcon {
-  margin-right: 5px;
-}
-
 .headerTodoInfo {
   margin-right: 30px;
 }
@@ -107,10 +88,15 @@
   font-weight  : 500;
   border-bottom: 1px solid #797a7a;
   cursor       : pointer;
+  transition   : .3s;
 }
 
-.methodTabBtn.activeMetodTab {
+.methodTabBtn.active {
   background-color: #fff;
+}
+
+.methodTabBtn:hover {
+  background-color: #c4eaff;
 }
 
 .tabContentList {
@@ -122,7 +108,7 @@
   display: none;
 }
 
-.tabContentListItem.activeContentItem {
+.tabContentListItem.active {
   display: block;
 }
 
@@ -226,40 +212,8 @@
 }
 
 .controlModeInfoListItem {
-  width          : 220px;
-  margin-bottom  : 10px;
-  display        : flex;
-  align-items    : center;
-  justify-content: space-between;
-  font-weight    : 500;
-}
-
-.controlModeInfoListTitle {
-  font-size  : 12px;
-  font-weight: 400;
-}
-
-.controlModeInfoListValueBox {
-  width      : 115px;
-  display    : flex;
-  align-items: center;
-  font-size  : 10px;
-}
-
-.controlModeInfoListValue {
-  display        : flex;
-  align-items    : center;
-  justify-content: center;
-  width          : 65px;
-  height         : 25px;
-  border         : 1px solid #727272;
-  color          : #2f3b4c;
-  margin-right   : 5px;
-  font-weight    : 500;
-}
-
-.controlModeInfoListUnit {
-  font-weight: 400;
+  width        : 220px;
+  margin-bottom: 10px;
 }
 
 .controlModeCheckBoxWrapper {
@@ -326,10 +280,6 @@
   font-size: 12px;
 }
 
-.settingsTable td {
-  border: 1px solid #979da5;
-}
-
 .settingsTableHeader {
   background-color: #61a1c4;
   color           : #fff;
@@ -337,24 +287,7 @@
 }
 
 .settingsTableRow {
-  padding    : 10px;
-  font-weight: 500;
-}
-
-.textInput {
-  padding         : 0;
-  margin          : 0;
-  width           : 100%;
-  border          : none;
-  background-color: transparent;
-}
-
-.alignCenter input {
-  text-align: center;
-}
-
-.alignRight input {
-  text-align: right;
+  padding: 7px 0;
 }
 
 .settingsTableAddBtn {
@@ -364,16 +297,18 @@
   z-index : 3;
 }
 
-.settingsTableAddBtn button {
-  border          : none;
-  background-color: #2574a9;
-  width           : 30px;
-  height          : 30px;
-  border-radius   : 50%;
-  cursor          : pointer;
-  color           : #797a7a;
+.methodTabButns {
+  display        : flex;
+  align-items    : center;
+  padding        : 15px;
+  justify-content: space-between;
 }
 
-.methodTabButns {
-  padding: 15px;
+.methodTabButnsContainer {
+  display    : flex;
+  align-items: center;
+}
+
+.methodTabButnsContainer span+span {
+  margin-left: 10px;
 }

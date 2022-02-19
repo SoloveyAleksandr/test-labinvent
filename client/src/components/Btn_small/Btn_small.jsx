@@ -1,15 +1,18 @@
-import Icon from '../Image/Icon';
+import Icon from '../Icon/Icon';
 import styles from './Btn_small.module.css';
 
 function Btn_small({
-    icon,
+    isFill = false,
     handleClick,
+    ...props
 }) {
     return (
         <button
             onClick={handleClick}
-            className={styles.btn_small}>
-            {icon}
+            className={isFill ?
+                `${styles.btn_small} ${styles.isFill}` :
+                styles.btn_small}>
+            <Icon {...props} />
         </button>
     );
 }

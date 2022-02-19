@@ -20,6 +20,7 @@ import {
 } from '../../store';
 
 import styles from './MethodPage.module.css';
+import Image from '../../components/Image/Image';
 
 function MethodPage() {
   const reduxDispatch = useDispatch();
@@ -93,7 +94,7 @@ function MethodPage() {
               `${styles.widgetsBtn} ${styles.isOpen}` :
               styles.widgetsBtn}
             onClick={() => setWidgetIsOpen(!widgetIsOpen)}>
-            <Icon image={arrowIcon} />
+            <Image image={arrowIcon} />
           </div>
           <ul className={styles.widgetsList}>
             <li className={styles.widgetsListItem}>
@@ -101,15 +102,15 @@ function MethodPage() {
                 title={'Sampler'}
                 widgetColor={'#1a9022'}
                 image={
-                  <Icon image={samplerIcon} />
+                  <Image image={samplerIcon} />
                 } />
             </li>
             <li className={styles.widgetsListItem}>
               <Widget
                 title={'Sampler'}
-                widgetColor={'#1a9022'}
+                widgetColor={'#4082a5'}
                 image={
-                  <Icon image={bottleFilling} />
+                  <Image image={bottleFilling} />
                 } />
             </li>
           </ul>

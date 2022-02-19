@@ -9,7 +9,7 @@ function Btn_big({
         <button
             onClick={handleClick}
             className={isFill ?
-                `${styles.btnBig} ${styles.btnBigIsFill}` :
+                `${styles.btnBig} ${styles.isFill}` :
                 styles.btnBig}>
             {text}
         </button>

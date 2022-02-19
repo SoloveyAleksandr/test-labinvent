@@ -9,7 +9,10 @@ import TitleWhithLine from '../TitleWhithLine/TitleWhithLine';
 import { v4 as uuid } from 'uuid';
 import Btn_big from '../Btn_big/Btn_big';
 import Btn_small from '../Btn_small/Btn_small';
-import Icon from '../Icon/Icon';
+import TableRow from '../TableRow/TableRow';
+import RunStateBtn from '../RunStateBtn/RunStateBtn';
+import ControlInfo from '../ControlInfo/ControlInfo';
+import { useState } from 'react';
 
 import styles from './Method.module.css';
 
@@ -21,6 +24,8 @@ function Method({
   saveMethod,
   checkSaved,
 }) {
+
+  const [openMethodTab, setOpenMethodTab] = useState(3);
 
   function getTime(value) {
     const time = Math.floor(+value / 60 / 60) > 10 ? Math.floor(+value / 60 / 60) : `0${Math.floor(+value / 60 / 60)}`;
@@ -42,19 +47,9 @@ function Method({
             <li className={styles.headerInfoListItem}>
               {
                 currentMethod.status === 'RUN' ?
-                  <button className={styles.runBtn}>
-                    <span className={styles.runBtnIcon}>
-                      <Icon image={runIcon} />
-                    </span>
-                    RUN
-                  </button>
+                  <RunStateBtn isRun={true} />
                   :
-                  <button className={`${styles.runBtn} ${styles.stopped}`}>
-                    <span className={styles.runBtnIcon}>
-                      <Icon image={stoppedIcon} />
-                    </span>
-                    STOPPED
-                  </button>
+                  <RunStateBtn isRun={false} />
               }
             </li>
             <li className={styles.headerInfoListItem}>
@@ -94,19 +89,37 @@ function Method({
 
         <div className={styles.methodTabContainer}>
           <ul className={styles.methodTabBtnsList}>
-            <li className={styles.methodTabBtn}>ALS</li>
-            <li className={styles.methodTabBtn}>Inlets</li>
-            <li className={`${styles.methodTabBtn} ${styles.activeMetodTab}`}>Columns</li>
+            <li
+              className={openMethodTab === 1 ?
+                `${styles.methodTabBtn} ${styles.active}` :
+                styles.methodTabBtn}
+              onClick={() => setOpenMethodTab(1)}>ALS</li>
+            <li
+              className={openMethodTab === 2 ?
+                `${styles.methodTabBtn} ${styles.active}` :
+                styles.methodTabBtn}
+              onClick={() => setOpenMethodTab(2)}>Inlets</li>
+            <li
+              className={openMethodTab === 3 ?
+                `${styles.methodTabBtn} ${styles.active}` :
+                styles.methodTabBtn}
+              onClick={() => setOpenMethodTab(3)}>Columns</li>
           </ul>
 
           <ul className={styles.tabContentList}>
-            <li className={styles.tabContentListItem}>
+            <li className={openMethodTab === 1 ?
+              `${styles.tabContentListItem} ${styles.active}` :
+              styles.tabContentListItem}>
               <h1>ALS</h1>
             </li>
-            <li className={styles.tabContentListItem}>
+            <li className={openMethodTab === 2 ?
+              `${styles.tabContentListItem} ${styles.active}` :
+              styles.tabContentListItem}>
               <h1>Inlats</h1>
             </li>
-            <li className={`${styles.tabContentListItem} ${styles.activeContentItem}`}>
+            <li className={openMethodTab === 3 ?
+              `${styles.tabContentListItem} ${styles.active}` :
+              styles.tabContentListItem}>
               <div className={styles.columnsTab}>
                 <div className={styles.columnsGeneralInfo}>
                   <ul className={styles.workSequenceList}>
@@ -184,56 +197,28 @@ function Method({
                           </div>
                           <ul className={styles.controlModeInfoList}>
                             <li className={styles.controlModeInfoListItem}>
-                              <span className={styles.controlModeInfoListTitle}>
-                                Flow
-                              </span>
-                              <div className={styles.controlModeInfoListValueBox}>
-                                <span className={styles.controlModeInfoListValue}>
-                                  {currentMethod.column.flow || '-'}
-                                </span>
-                                <span className={styles.controlModeInfoListUnit}>
-                                  ml/min
-                                </span>
-                              </div>
+                              <ControlInfo
+                                title={'Flow'}
+                                value={currentMethod.column.flow}
+                                unit={'ml/min'} />
                             </li>
                             <li className={styles.controlModeInfoListItem}>
-                              <span className={styles.controlModeInfoListTitle}>
-                                Average Velocity
-                              </span>
-                              <div className={styles.controlModeInfoListValueBox}>
-                                <span className={styles.controlModeInfoListValue}>
-                                  {currentMethod.column.averageVelocity || '-'}
-                                </span>
-                                <span className={styles.controlModeInfoListUnit}>
-                                  cm/sec
-                                </span>
-                              </div>
+                              <ControlInfo
+                                title={'Average Velocity'}
+                                value={currentMethod.column.averageVelocity}
+                                unit={'cm/sec'} />
                             </li>
                             <li className={styles.controlModeInfoListItem}>
-                              <span className={styles.controlModeInfoListTitle}>
-                                Pressure
-                              </span>
-                              <div className={styles.controlModeInfoListValueBox}>
-                                <span className={styles.controlModeInfoListValue}>
-                                  {currentMethod.column.pressure || '-'}
-                                </span>
-                                <span className={styles.controlModeInfoListUnit}>
-                                  psi
-                                </span>
-                              </div>
+                              <ControlInfo
+                                title={'Pressure'}
+                                value={currentMethod.column.pressure}
+                                unit={'psi'} />
                             </li>
                             <li className={styles.controlModeInfoListItem}>
-                              <span className={styles.controlModeInfoListTitle}>
-                                Holdup Time
-                              </span>
-                              <div className={styles.controlModeInfoListValueBox}>
-                                <span className={styles.controlModeInfoListValue}>
-                                  {currentMethod.column.holdupTime || '-'}
-                                </span>
-                                <span className={styles.controlModeInfoListUnit}>
-                                  min
-                                </span>
-                              </div>
+                              <ControlInfo
+                                title={'Holdup Time'}
+                                value={currentMethod.column.holdupTime}
+                                unit={'min'} />
                             </li>
                           </ul>
 
@@ -247,17 +232,10 @@ function Method({
 
                       <div className={styles.columnsPostRunBox}>
                         <div className={styles.controlModeInfoListItem}>
-                          <span className={styles.controlModeInfoListTitle}>
-                            Post Run
-                          </span>
-                          <div className={styles.controlModeInfoListValueBox}>
-                            <span className={styles.controlModeInfoListValue}>
-                              {currentMethod.column.postRun || '-'}
-                            </span>
-                            <span className={styles.controlModeInfoListUnit}>
-                              ml/min
-                            </span>
-                          </div>
+                          <ControlInfo
+                            title={'Post Run'}
+                            value={currentMethod.column.postRun}
+                            unit={'ml/min'} />
                         </div>
                       </div>
                     </div>
@@ -271,7 +249,9 @@ function Method({
             {currentMethod.name ?
               <div>
                 <div className={styles.settingsTableAddBtn} >
-                  <button onClick={addTableRow}></button>
+                  <Btn_small
+                    icon={'statIcon'}
+                    isFill={true} />
                 </div>
                 <div className={styles.methodTabSettingsTitle}>
                   <TitleWhithLine title={'Pressure/Flow Settings'} />
@@ -311,49 +291,13 @@ function Method({
 
                     <tbody>
                       {currentMethod.pressure.tableSteps.map((step, index) =>
-                        <tr key={uuid()} className={styles.settingsTableRow}>
-                          <td className={`${styles.settingsTableRow} ${styles.alignCenter}`}>
-                            <input
-                              readOnly={false}
-                              onChange={() => changeRadioState(index)}
-                              checked={step.selected} type="radio" name="settingsTableRadio" />
-                          </td>
-                          <td className={`${styles.settingsTableRow} ${styles.alignCenter}`}>
-                            <input
-                              className={styles.textInput}
-                              readOnly={false}
-                              onChange={(e) => changeInputText(e, index, 'ramp')}
-                              value={step.ramp} type="text" />
-                          </td>
-                          <td className={`${styles.settingsTableRow} ${styles.alignRight}`}>
-                            <input
-                              className={styles.textInput}
-                              readOnly={false}
-                              onChange={(e) => changeInputText(e, index, 'rate')}
-                              value={step.rate} type="text" />
-                          </td>
-                          <td className={`${styles.settingsTableRow} ${styles.alignRight}`}>
-                            <input
-                              className={styles.textInput}
-                              readOnly={false}
-                              onChange={(e) => changeInputText(e, index, 'value')}
-                              value={step.value} type="text" />
-                          </td>
-                          <td className={`${styles.settingsTableRow} ${styles.alignRight}`}>
-                            <input
-                              className={styles.textInput}
-                              readOnly={false}
-                              onChange={(e) => changeInputText(e, index, 'holdTime')}
-                              value={step.holdTime} type="text" />
-                          </td>
-                          <td className={`${styles.settingsTableRow} ${styles.alignRight}`}>
-                            <input
-                              className={styles.textInput}
-                              readOnly={false}
-                              onChange={(e) => changeInputText(e, index, 'runTime')}
-                              value={step.runTime} type="text" />
-                          </td>
-                        </tr>
+                        <TableRow key={uuid()}
+                          selected={step.selected}
+                          ramp={step.ramp}
+                          rate={step.rate}
+                          value={step.value}
+                          holdTime={step.holdTime}
+                          runTime={step.runTime} />
                       )}
                     </tbody>
                   </table>
@@ -365,24 +309,34 @@ function Method({
       </div>
 
       <div className={styles.methodTabButns}>
-        <div>
-          <Btn_small
-            icon={<Icon icon={'newIcon'} />} />
-          <Btn_small
-          />
+        <div className={styles.methodTabButnsContainer}>
+          <span>
+            <Btn_small
+              icon={'newIcon'} />
+          </span>
+          <span>
+            <Btn_small
+              icon={'moreIcon'} />
+          </span>
         </div>
 
-        <div>
-          <Btn_big
-            text='Save'
-            handleClick={saveMethod}
-            isFill={true} />
-          <Btn_big
-            text='Save as'
-            isFill={true} />
-          <Btn_big
-            text='Cancel'
-            isFill={false} />
+        <div className={styles.methodTabButnsContainer}>
+          <span>
+            <Btn_big
+              text='Save'
+              handleClick={saveMethod}
+              isFill={true} />
+          </span>
+          <span>
+            <Btn_big
+              text='Save as'
+              isFill={true} />
+          </span>
+          <span>
+            <Btn_big
+              text='Cancel'
+              isFill={false} />
+          </span>
         </div>
       </div>
 

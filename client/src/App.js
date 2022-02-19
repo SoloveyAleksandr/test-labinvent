@@ -1,20 +1,31 @@
 import { useState } from "react";
 import AppRouter from "./AppRouter";
 import Header from "./components/Header/Header";
+import Lims from "./components/Lims/Lims";
+import NavBar from "./components/NavBar/NavBar";
+import { useDispatch, useSelector } from "react-redux";
 
 import './App.css';
-import Lims from "./components/Lims/Lims";
+import { setOpenMenu } from "./store";
 
 function App() {
-  const [menuIsOpen, setMenuIsOpen] = useState(false)
+  const reduxDispatch = useDispatch();
+  const store = useSelector(store => store.AppStore);
+
+  function openMenu() {
+    reduxDispatch(setOpenMenu());
+  }
+
   return (
     <div className="App">
       <div className="app-inner-wrapper">
+        <NavBar
+          isOpen={store.menuIsOpen} />
         <Lims />
         <div className="app-content">
           <Header
-            menuBtnHandleClick={() => setMenuIsOpen(!menuIsOpen)}
-            menuIsOpen={menuIsOpen} />
+            menuBtnHandleClick={openMenu}
+            menuIsOpen={store.menuIsOpen} />
           <AppRouter />
         </div>
       </div>

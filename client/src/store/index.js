@@ -4,6 +4,7 @@ const AppStore = createSlice({
     name: 'AppStore',
 
     initialState: {
+        menuIsOpen: false,
         currentMethod: {
             name: '',
             pressure: {
@@ -13,6 +14,9 @@ const AppStore = createSlice({
     },
 
     reducers: {
+        setOpenMenu(state) {
+            state.menuIsOpen = !state.menuIsOpen;
+        },
         setCurrentMethod(state, action) {
             state.currentMethod = action.payload;
         },
@@ -36,6 +40,7 @@ export const {
     addTableStap,
     changeTableInputValue,
     changeTableInputRadio,
+    setOpenMenu,
 } = AppStore.actions;
 
 export default configureStore({
