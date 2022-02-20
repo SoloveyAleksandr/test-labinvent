@@ -1,25 +1,25 @@
 .method {
   background-color: #fff;
-  border          : 1px solid #797a7a;
+  border: 1px solid #797a7a;
 }
 
 .header {
-  display      : flex;
-  align-items  : center;
+  display: flex;
+  align-items: center;
   border-bottom: 1px solid #797a7a;
 }
 
 .headerInfoList {
-  display         : flex;
-  align-items     : center;
+  display: flex;
+  align-items: center;
   background-color: #f1f3f2;
-  padding         : 15px;
+  padding: 15px;
 }
 
 .headerInfoListTitle {
   text-transform: uppercase;
-  margin-right  : 10px;
-  font-weight   : 500;
+  margin-right: 10px;
+  font-weight: 500;
 }
 
 .headerTodoInfo {
@@ -28,9 +28,9 @@
 
 .headerTodoInfoTitle {
   text-transform: uppercase;
-  color         : #797a7a;
-  font-weight   : 500;
-  margin-right  : 5px;
+  color: #797a7a;
+  font-weight: 500;
+  margin-right: 5px;
 }
 
 .headerTodoInfoName {
@@ -38,7 +38,7 @@
 }
 
 .headerInfoListTimer {
-  font-weight : 500;
+  font-weight: 500;
   margin-right: 25px;
 }
 
@@ -47,13 +47,13 @@
 }
 
 .headerTabBtn {
-  min-width       : 170px;
-  border          : 1px solid #bdc9d1;
-  border-top      : 1px solid transparent;
-  border-bottom   : 1px solid transparent;
-  padding         : 15px;
+  min-width: 170px;
+  border: 1px solid #bdc9d1;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  padding: 15px;
   background-color: #f1f3f2;
-  cursor          : pointer;
+  cursor: pointer;
 }
 
 .headerTabBtn.activeHeaderTab {
@@ -62,8 +62,8 @@
 
 .headerTabBtnTitle {
   text-transform: uppercase;
-  font-weight   : 500;
-  margin-right  : 5px;
+  font-weight: 500;
+  margin-right: 5px;
 }
 
 .headerTabBtnName {
@@ -71,24 +71,24 @@
 }
 
 .methodTabContainer {
-  display      : flex;
+  display: flex;
   border-bottom: 1px solid #797a7a;
 }
 
 .methodTabBtnsList {
-  display         : flex;
-  flex-direction  : column;
-  width           : 150px;
-  border-right    : 1px solid #797a7a;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  border-right: 1px solid #797a7a;
   background-color: #f1f3f2;
 }
 
 .methodTabBtn {
-  padding      : 10px;
-  font-weight  : 500;
+  padding: 10px;
+  font-weight: 500;
   border-bottom: 1px solid #797a7a;
-  cursor       : pointer;
-  transition   : .3s;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .methodTabBtn.active {
@@ -100,7 +100,7 @@
 }
 
 .tabContentList {
-  width       : calc(50% - 75px);
+  width: calc(50% - 75px);
   border-right: 1px solid #797a7a;
 }
 
@@ -113,60 +113,60 @@
 }
 
 .columnsGeneralInfo {
-  display        : flex;
-  flex-wrap      : wrap;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
 .workSequenceList {
   display: flex;
-  margin : 30px 0;
+  margin: 30px 0;
 }
 
-.workSequenceList li+li {
+.workSequenceList li + li {
   margin-left: 40px;
 }
 
 .workSequenceItem {
-  max-width     : 115px;
-  display       : flex;
+  max-width: 115px;
+  display: flex;
   flex-direction: column;
-  align-items   : center;
+  align-items: center;
 }
 
 .workSequenceItemTitle {
-  color        : #979da5;
-  font-size    : 10px;
-  font-weight  : 400;
+  color: #979da5;
+  font-size: 10px;
+  font-weight: 400;
   margin-bottom: 5px;
 }
 
 .workSequenceItemImg {
-  position       : relative;
-  width          : 50px;
-  height         : 50px;
-  display        : flex;
-  align-items    : center;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom  : 5px;
+  margin-bottom: 5px;
 }
 
 .workSequenceItemImg img {
   object-fit: contain;
-  max-width : 100%;
+  max-width: 100%;
   max-height: 100%;
 }
 
 .workSequenceArrow {
   position: absolute;
-  left    : -75px;
+  left: -75px;
 }
 
 .workSequenceDescription {
-  font-size  : 12px;
+  font-size: 12px;
   font-weight: 400;
-  color      : #2f3b4c;
-  text-align : center;
+  color: #2f3b4c;
+  text-align: center;
 }
 
 .workSequenceDescription.bold {
@@ -174,25 +174,25 @@
 }
 
 .columnsTableInfoList {
-  display       : flex;
+  display: flex;
   flex-direction: column;
-  border        : 1px solid #2f3b4c;
-  padding       : 10px;
-  margin        : 30px 0;
+  border: 1px solid #2f3b4c;
+  padding: 10px;
+  margin: 30px 0;
 }
 
-.columnsTableInfoList li+li {
+.columnsTableInfoList li + li {
   margin-top: 8px;
 }
 
 .columnsTableInfoListItem {
-  font-size  : 12px;
+  font-size: 12px;
   font-weight: 500;
-  color      : #2f3b4c;
+  color: #2f3b4c;
 }
 
 .controlMode {
-  color  : #727272;
+  color: #727272;
   padding: 15px;
 }
 
@@ -205,35 +205,35 @@
 }
 
 .controlModeInfoList {
-  display        : flex;
-  flex-wrap      : wrap;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items    : center;
+  align-items: center;
 }
 
 .controlModeInfoListItem {
-  width        : 220px;
+  width: 220px;
   margin-bottom: 10px;
 }
 
 .controlModeCheckBoxWrapper {
-  display    : flex;
+  display: flex;
   align-items: center;
 }
 
 .controlModeCheckBoxWrapper input {
-  width       : 15px;
-  height      : 15px;
+  width: 15px;
+  height: 15px;
   margin-right: 5px;
 }
 
 .controlModeCheckBoxWrapper label {
   font-weight: 400;
-  font-size  : 12px;
+  font-size: 12px;
 }
 
 .columnsPostRun {
-  color  : #727272;
+  color: #727272;
   padding: 15px;
 }
 
@@ -243,8 +243,8 @@
 
 .methodTabSettings {
   background-color: #fff;
-  width           : calc(50% - 75px);
-  position        : relative;
+  width: calc(50% - 75px);
+  position: relative;
 }
 
 .methodTabSettingsTitle {
@@ -252,20 +252,20 @@
 }
 
 .methodTabSettingsRadioBtnsList {
-  display        : flex;
-  align-items    : center;
+  display: flex;
+  align-items: center;
   justify-content: space-evenly;
-  margin-bottom  : 20px;
+  margin-bottom: 20px;
 }
 
 .methodTabSettingsRadioBtn {
-  display    : flex;
+  display: flex;
   align-items: center;
 }
 
 .methodTabSettingsRadioBtn input {
-  width       : 15px;
-  height      : 15px;
+  width: 15px;
+  height: 15px;
   margin-right: 5px;
 }
 
@@ -276,14 +276,14 @@
 }
 
 .settingsTable {
-  width    : 100%;
+  width: 100%;
   font-size: 12px;
 }
 
 .settingsTableHeader {
   background-color: #61a1c4;
-  color           : #fff;
-  text-align      : center;
+  color: #fff;
+  text-align: center;
 }
 
 .settingsTableRow {
@@ -292,23 +292,36 @@
 
 .settingsTableAddBtn {
   position: absolute;
-  bottom  : 10px;
-  right   : 10px;
-  z-index : 3;
+  bottom: 10px;
+  right: 10px;
+  z-index: 3;
 }
 
 .methodTabButns {
-  display        : flex;
-  align-items    : center;
-  padding        : 15px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
   justify-content: space-between;
 }
 
 .methodTabButnsContainer {
-  display    : flex;
+  display: flex;
   align-items: center;
 }
 
-.methodTabButnsContainer span+span {
+.methodTabButnsContainer span + span {
   margin-left: 10px;
+}
+
+.BntSmallWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #979da5;
+}
+
+.BntSmallWrapper span {
+  margin-top: 5px;
 }

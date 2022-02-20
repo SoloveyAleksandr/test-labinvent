@@ -3,7 +3,7 @@ import styles from './Widget.module.css';
 function Widget({
   title,
   widgetColor,
-  image
+  children
 }) {
   return (
     <div className={styles.widget}>
@@ -13,8 +13,8 @@ function Widget({
           style={{ backgroundColor: widgetColor }}></span>
         <h3 className={styles.widgetTitle}>{title}</h3>
       </div>
-      <div className={styles.widgetImg}>
-        {image}
+      <div className={styles.widgetBody}>
+        {children}
       </div>
     </div>
   );

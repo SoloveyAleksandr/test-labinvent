@@ -22,3 +22,11 @@
   font-size: 12px;
   font-weight: 500;
 }
+
+.widgetBody {
+  height: 156px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

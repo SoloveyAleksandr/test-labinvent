@@ -1,6 +1,3 @@
-import Image from '../Image/Image';
-import runIcon from '../../images/runIcon.png';
-import stoppedIcon from '../../images/stoppedIcon.png';
 import inletsImg from '../../images/inlets.png';
 import columnImg from '../../images/column.png';
 import detectorImg from '../../images/detector.png';
@@ -13,16 +10,24 @@ import TableRow from '../TableRow/TableRow';
 import RunStateBtn from '../RunStateBtn/RunStateBtn';
 import ControlInfo from '../ControlInfo/ControlInfo';
 import { useState } from 'react';
+import Spiner from '../Spiner/Spiner';
 
 import styles from './Method.module.css';
 
 function Method({
+  isLoading,
   currentMethod,
   addTableRow,
-  changeInputText,
-  changeRadioState,
   saveMethod,
-  checkSaved,
+  changeSelectedInput,
+  changeRampInput,
+  changeRateInput,
+  changeValueInput,
+  changeHoldTimeInput,
+  changeRunTimeInput,
+  setSaveMethodsModalIsOpen,
+  setNewMethod,
+  changeControlModeStatus,
 }) {
 
   const [openMethodTab, setOpenMethodTab] = useState(3);
@@ -38,6 +43,10 @@ function Method({
 
   return (
     <div className={styles.method}>
+
+      <Spiner
+        isActive={isLoading} />
+
       <div className={styles.header}>
         {currentMethod.name ?
           <ul className={styles.headerInfoList}>
@@ -192,7 +201,11 @@ function Method({
 
                         <div className={styles.controlModeInnerWrapper}>
                           <div className={styles.controlModeCheckBoxWrapper}>
-                            <input readOnly checked={currentMethod.column.controlOn} type="checkbox" name="isOnCheck" id="isOnCheck" />
+                            <input
+                              onChange={changeControlModeStatus}
+                              checked={currentMethod.column.controlOn}
+                              type="checkbox"
+                              name="isOnCheck" />
                             <label htmlFor="isOnCheck">On</label>
                           </div>
                           <ul className={styles.controlModeInfoList}>
@@ -251,7 +264,8 @@ function Method({
                 <div className={styles.settingsTableAddBtn} >
                   <Btn_small
                     icon={'statIcon'}
-                    isFill={true} />
+                    isFill={true}
+                    handleClick={addTableRow} />
                 </div>
                 <div className={styles.methodTabSettingsTitle}>
                   <TitleWhithLine title={'Pressure/Flow Settings'} />
@@ -297,7 +311,14 @@ function Method({
                           rate={step.rate}
                           value={step.value}
                           holdTime={step.holdTime}
-                          runTime={step.runTime} />
+                          runTime={step.runTime}
+                          changeSelectedInput={() => changeSelectedInput(index)}
+                          changeRampInput={(value) => changeRampInput(value, index)}
+                          changeRateInput={(value) => changeRateInput(value, index)}
+                          changeValueInput={(value) => changeValueInput(value, index)}
+                          changeHoldTimeInput={(value) => changeHoldTimeInput(value, index)}
+                          changeRunTimeInput={(value) => changeRunTimeInput(value, index)}
+                        />
                       )}
                     </tbody>
                   </table>
@@ -310,13 +331,17 @@ function Method({
 
       <div className={styles.methodTabButns}>
         <div className={styles.methodTabButnsContainer}>
-          <span>
+          <span className={styles.BntSmallWrapper}>
             <Btn_small
-              icon={'newIcon'} />
+              icon={'newIcon'}
+              handleClick={setNewMethod} />
+            <span>New</span>
           </span>
-          <span>
+          <span className={styles.BntSmallWrapper}>
             <Btn_small
-              icon={'moreIcon'} />
+              icon={'moreIcon'}
+              handleClick={setSaveMethodsModalIsOpen} />
+            <span>Open</span>
           </span>
         </div>
 

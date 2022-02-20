@@ -1,3 +1,4 @@
+import { changeTextInput } from '../../store';
 import styles from './TableRow.module.css';
 
 function TableRow({
@@ -7,44 +8,57 @@ function TableRow({
     value,
     holdTime,
     runTime,
+    changeSelectedInput,
+    changeRampInput,
+    changeRateInput,
+    changeValueInput,
+    changeHoldTimeInput,
+    changeRunTimeInput,
+    onblur,
 }) {
     return (
         <tr className={styles.tableRow}>
             <td className={`${styles.tableCell} ${styles.alignCenter}`}>
                 <input
-                    // onChange={() => changeRadioState(index)}
+                    onChange={() => changeSelectedInput()}
                     defaultChecked={selected} type="radio"
                     name='tableRadio' />
             </td>
             <td className={`${styles.tableCell} ${styles.alignCenter}`}>
                 <input
                     className={styles.textInput}
-                    // onChange={(e) => changeInputText(e, index, 'ramp')}
-                    defaultValue={ramp} type="text" />
+                    onChange={(e) => changeRampInput(e.target.value)}
+                    type="text"
+                    value={ramp || ''} />
             </td>
             <td className={`${styles.tableCell} ${styles.alignRight}`}>
                 <input
                     className={styles.textInput}
-                    // onChange={(e) => changeInputText(e, index, 'rate')}
-                    defaultValue={rate} type="text" />
+                    onChange={(e) => changeRateInput(e.target.value)}
+                    type="text"
+                    value={rate || ''} />
             </td>
             <td className={`${styles.tableCell} ${styles.alignRight}`}>
                 <input
                     className={styles.textInput}
-                    // onChange={(e) => changeInputText(e, index, 'value')}
-                    defaultValue={value} type="text" />
+                    onChange={(e) => changeValueInput(e.target.value)}
+                    type="text"
+                    value={value || ''} />
             </td>
             <td className={`${styles.tableCell} ${styles.alignRight}`}>
                 <input
                     className={styles.textInput}
-                    // onChange={(e) => changeInputText(e, index, 'holdTime')}
-                    defaultValue={holdTime} type="text" />
+                    onChange={(e) => changeHoldTimeInput(e.target.value)}
+                    type="text"
+                    value={holdTime || ''} />
             </td>
             <td className={`${styles.tableCell} ${styles.alignRight}`}>
                 <input
                     className={styles.textInput}
-                    // onChange={(e) => changeInputText(e, index, 'runTime')}
-                    defaultValue={runTime} type="text" />
+                    onBlur={onblur}
+                    onChange={(e) => changeRunTimeInput(e.target.value)}
+                    type="text"
+                    value={runTime || ''} />
             </td>
         </tr>
     );

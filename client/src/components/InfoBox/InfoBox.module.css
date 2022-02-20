@@ -1,0 +1,19 @@
+.infoBox {
+  width: 100%;
+  border: 1px solid #797a7a;
+  background-color: #fff;
+}
+
+.infoBoxTitle {
+  border-bottom: 1px solid #797a7a;
+  padding: 15px;
+}
+
+.infoBoxTitle span {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.infoBoxWrapper {
+  width: 50%;
+}

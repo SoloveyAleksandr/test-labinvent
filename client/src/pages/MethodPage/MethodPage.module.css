@@ -1,6 +1,6 @@
 .innerWrapper {
-  position  : relative;
-  padding   : 0 0 0 0;
+  position: relative;
+  padding: 0 0 0 0;
   transition: 0.3s;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .widgetsList {
-  display       : flex;
+  display: flex;
   flex-direction: column;
 }
 
@@ -22,15 +22,15 @@
 }
 
 .widgets {
-  width           : 220px;
-  padding         : 15px 0;
-  display         : flex;
-  justify-content : center;
+  width: 220px;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
   background-color: #f1f3f2;
-  height          : 100%;
-  position        : fixed;
-  left            : 75px;
-  transition      : 0.3s;
+  height: 100%;
+  position: fixed;
+  left: 75px;
+  transition: 0.3s;
 }
 
 .widgets.isOpen {
@@ -38,35 +38,125 @@
 }
 
 .widgetsBtn {
-  width           : 30px;
-  height          : 30px;
-  border-radius   : 50%;
-  display         : flex;
-  align-items     : center;
-  justify-content : center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #f1f3f2;
-  box-shadow      : 0 0 6px 0 #b7b8b7;
-  position        : absolute;
-  top             : 37px;
-  right           : -15px;
-  transform       : rotate(-90deg);
-  transition      : 0.3s;
-  cursor          : pointer;
+  box-shadow: 0 0 6px 0 #b7b8b7;
+  position: absolute;
+  top: 37px;
+  right: -15px;
+  transform: rotate(-90deg);
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .widgetsBtn.isOpen {
-  right    : -25px;
+  right: -25px;
   transform: rotate(90deg);
 }
 
 .pageBody {
-  padding    : 20px 20px 20px 25px;
-  box-shadow : 0 0 4px 0 #b7b8b7;
-  transition : 0.3s;
+  padding: 20px 20px 20px 25px;
+  box-shadow: 0 0 4px 0 #b7b8b7;
+  transition: 0.3s;
   margin-left: 10px;
-  min-height : calc(100vh - 50px);
+  min-height: calc(100vh - 50px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .pageBody.isOpen {
   padding: 20px 20px 20px 20px;
+}
+
+.saveMethodList {
+  display: flex;
+  flex-direction: column;
+}
+
+.saveMethodList li + li {
+  margin-top: 10px;
+}
+
+.saveMethod {
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.saveMethod:hover {
+  color: #61a1c4;
+}
+
+.newMethodNameModal {
+  display: flex;
+  align-items: flex-end;
+}
+
+.newMethodNameInputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.newMethodNameInputWrapper label {
+  font-size: 12px;
+  color: #b7b8b7;
+  margin-bottom: 5px;
+}
+
+.infoBoxWrapper {
+  margin-top: 20px;
+}
+
+.chartPlotList {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #b7b8b7;
+  padding: 5px 15px;
+}
+
+.chartPlotList li + li {
+  margin-left: 25px;
+}
+
+.chartPlotListItem {
+  display: flex;
+  align-items: center;
+}
+
+.chartPlotListItem span {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+.chart {
+  padding: 65px 15px 75px;
+}
+
+.chartBox {
+  display: flex;
+}
+
+.chartViewBtnsList {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px;
+  border-left: 1px solid #b7b8b7;
+}
+
+.chartViewBtn {
+  margin-bottom: 5px;
+}
+
+.methodWrapper {
+  width: 100%;
 }
