@@ -1,4 +1,4 @@
-import { changeTextInput } from '../../store';
+import { useState } from 'react';
 import styles from './TableRow.module.css';
 
 function TableRow({
@@ -16,11 +16,13 @@ function TableRow({
     changeRunTimeInput,
     onblur,
 }) {
+    // const [disabled, setDisabled] = useState(true);
+
     return (
         <tr className={styles.tableRow}>
             <td className={`${styles.tableCell} ${styles.alignCenter}`}>
                 <input
-                    onChange={() => changeSelectedInput()}
+                    onChange={(e) => changeSelectedInput()}
                     defaultChecked={selected} type="radio"
                     name='tableRadio' />
             </td>
