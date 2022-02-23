@@ -21,7 +21,9 @@ function App() {
       <div className="app-inner-wrapper">
         <NavBar
           isOpen={store.menuIsOpen} />
-        <Lims />
+        <Lims
+          totalTime={store.currentMethod.totalTime}
+          currentTime={store.currentMethod.currentTime} />
         <div className="app-content">
           <Header
             menuBtnHandleClick={openMenu}

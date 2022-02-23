@@ -2,8 +2,27 @@ import Icon from '../Icon/Icon';
 import searchIcon from '../../images/searchIcon.png';
 
 import styles from './Lims.module.css';
+import RunControlBtn from '../RunControlBtn/RunControlBtn';
 
-function Lims() {
+function Lims({
+  totalTime,
+  currentTime
+}) {
+
+  function timeLine() {
+    const width = 100 / totalTime * currentTime;
+    return `${width}%`;
+  }
+
+  function getTime(value) {
+    const time = Math.floor(+value / 60 / 60) > 10 ? Math.floor(+value / 60 / 60) : `0${Math.floor(+value / 60 / 60)}`;
+    const minutes = Math.floor(+value / 60 % 60) > 10 ? Math.floor(+value / 60 % 60) : `0${Math.floor(+value / 60 % 60)}`;
+    const seconds = +value % 60 > 10 ? +value % 60 : `0${+value % 60}`;
+    if (+time > 0) {
+      return `${time}:${minutes}:${seconds}`;
+    } else return `${minutes}:${seconds}`
+  }
+
   return (
     <div className={styles.lims}>
       <div className={styles.header}>
@@ -23,17 +42,31 @@ function Lims() {
 
       <div className={styles.footer}>
         <div className={styles.timer}>
-          <span>Run 00:23/01:00</span>
-          <span>-00:47</span>
+          <div
+            className={styles.timerTimeLine}
+            style={{
+              width: timeLine()
+            }}></div>
+          <div className={styles.timerInfoWrapper}>
+            <span>Run {getTime(currentTime)}/{getTime(totalTime)}</span>
+            <span>-00:47</span>
+          </div>
         </div>
         <div className={styles.footerBox}>
           <h3 className={styles.title}>run</h3>
           <div className={styles.footerBtns}>
-
+            <RunControlBtn
+              text={'on'}
+              bgColor={'#2575aa'}
+              color={'#14741b'} />
+            <RunControlBtn
+              text={'off'}
+              bgColor={'#2575aa'}
+              color={'#8c9092'} />
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 

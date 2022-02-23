@@ -305,7 +305,7 @@ function Method({
 
                     <tbody>
                       {currentMethod.pressure.tableSteps.map((step, index) =>
-                        <TableRow key={uuid()}
+                        <TableRow key={index}
                           selected={step.selected}
                           ramp={step.ramp}
                           rate={step.rate}

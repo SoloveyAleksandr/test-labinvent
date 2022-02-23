@@ -204,8 +204,8 @@ function MethodPage() {
             </li>
             <li className={styles.widgetsListItem}>
               <Widget
-                title={'Sampler'}
-                widgetColor={'#4082a5'}
+                title={'Quat. Pump'}
+                widgetColor={'#f5ad3c'}
               >
                 <SVG_bottle />
                 <SVG_valve />

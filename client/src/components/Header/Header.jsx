@@ -6,6 +6,7 @@ import profile from '../../images/Profile.png';
 import unlock from '../../images/unlock-icon.png';
 
 import styles from './Header.module.css';
+import Image from '../Image/Image';
 
 function Header({
   menuBtnHandleClick,
@@ -51,7 +52,7 @@ function Header({
               <li className={styles.userControlsListItem}>
                 <button className={styles.userControlsBtn}>
                   <span className={styles.userControlsBtnIcon}>
-                    <Icon image={profile} />
+                    <Image image={profile} />
                   </span>
                   Alexander
                 </button>
@@ -62,7 +63,7 @@ function Header({
                 </DropdownBtn>
               </li>
               <li className={styles.userControlsListItem}>
-                <Icon image={unlock} />
+                <Image image={unlock} />
               </li>
             </ul>
           </div>

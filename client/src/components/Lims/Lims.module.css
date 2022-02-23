@@ -39,10 +39,28 @@
 
 .timer {
   background-color: #d5d9db;
+  position: relative;
+}
+
+.timerInfoWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 15px 0px 23px;
+  padding: 8px 15px 8px 23px;
+  position: relative;
+  z-index: 1;
+}
+
+.timerInfoWrapper span {
+  font-weight: 400;
+}
+
+.timerTimeLine {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #c1c4c5;
 }
 
 .innerWrapper {
@@ -69,4 +87,8 @@
   color: #2f3b4c;
   font-size: 12px;
   font-weight: 500;
+}
+
+.footerBtns button + button {
+  margin-left: 9px;
 }
