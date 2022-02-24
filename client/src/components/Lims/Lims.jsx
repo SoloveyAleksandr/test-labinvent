@@ -1,8 +1,7 @@
+import RunControlBtn from '../RunControlBtn/RunControlBtn';
 import Icon from '../Icon/Icon';
-import searchIcon from '../../images/searchIcon.png';
 
 import styles from './Lims.module.css';
-import RunControlBtn from '../RunControlBtn/RunControlBtn';
 
 function Lims({
   totalTime,
@@ -32,8 +31,13 @@ function Lims({
       <div className={styles.innerWrapper}>
         <div className={styles.searchWrapper}>
           <input className={styles.searchInput} id='folderSearch' type="text" placeholder='Search' />
-          <label htmlFor="folderSearch">
-            <Icon image={searchIcon} />
+          <label 
+          htmlFor="folderSearch"
+          className={styles.searchIcon}>
+            <Icon
+              icon={'searchIcon'}
+              size={16}
+              color={'#515b69'} />
           </label>
         </div>
       </div>
