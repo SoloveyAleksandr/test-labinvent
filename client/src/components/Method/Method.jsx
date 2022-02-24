@@ -3,9 +3,8 @@ import columnImg from '../../images/column.png';
 import detectorImg from '../../images/detector.png';
 import sequenceArrow from '../../images/bigArrow.png';
 import TitleWhithLine from '../TitleWhithLine/TitleWhithLine';
-import { v4 as uuid } from 'uuid';
-import Btn_big from '../Btn_big/Btn_big';
-import Btn_small from '../Btn_small/Btn_small';
+import BtnBig from '../BtnBig/BtnBig';
+import BtnSmall from '../BtnSmall/BtnSmall';
 import TableRow from '../TableRow/TableRow';
 import RunStateBtn from '../RunStateBtn/RunStateBtn';
 import ControlInfo from '../ControlInfo/ControlInfo';
@@ -262,7 +261,7 @@ function Method({
             {currentMethod.name ?
               <div>
                 <div className={styles.settingsTableAddBtn} >
-                  <Btn_small
+                  <BtnSmall
                     icon={'statIcon'}
                     isFill={true}
                     handleClick={addTableRow} />
@@ -304,6 +303,7 @@ function Method({
                     </thead>
 
                     <tbody>
+                      <TableRow />
                       {currentMethod.pressure.tableSteps.map((step, index) =>
                         <TableRow key={index}
                           selected={step.selected}
@@ -332,13 +332,14 @@ function Method({
       <div className={styles.methodTabButns}>
         <div className={styles.methodTabButnsContainer}>
           <span className={styles.BntSmallWrapper}>
-            <Btn_small
+            <BtnSmall
               icon={'newIcon'}
-              handleClick={setNewMethod} />
+              handleClick={setNewMethod}
+              size={12} />
             <span>New</span>
           </span>
           <span className={styles.BntSmallWrapper}>
-            <Btn_small
+            <BtnSmall
               icon={'moreIcon'}
               handleClick={setSaveMethodsModalIsOpen} />
             <span>Open</span>
@@ -347,18 +348,18 @@ function Method({
 
         <div className={styles.methodTabButnsContainer}>
           <span>
-            <Btn_big
+            <BtnBig
               text='Save'
               handleClick={saveMethod}
               isFill={true} />
           </span>
           <span>
-            <Btn_big
+            <BtnBig
               text='Save as'
               isFill={true} />
           </span>
           <span>
-            <Btn_big
+            <BtnBig
               text='Cancel'
               isFill={false} />
           </span>

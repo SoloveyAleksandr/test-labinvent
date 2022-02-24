@@ -21,6 +21,76 @@
   margin-bottom: 15px;
 }
 
+.widgetsListItemWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.widgetsListItemBody {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.widgetsListItemInfo {
+  font-size: 10px;
+  font-weight: 500;
+  margin-top: 40px;
+}
+
+.svgBottleWrapper {
+  position: relative;
+}
+
+.svgBottle_1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 8px;
+  top: 30px;
+}
+
+.svgBottle_1::before {
+  content: "A";
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.svgBottle_1::after {
+  content: "0.0";
+  font-size: 10px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.svgBottle_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 2px;
+  top: 30px;
+}
+
+.svgBottle_2::before {
+  content: "B";
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.svgBottle_2::after {
+  content: "100,0";
+  font-size: 10px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
 .widgets {
   width: 220px;
   padding: 15px 0;
@@ -114,6 +184,19 @@
 
 .infoBoxWrapper {
   margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.spectraWrapper {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.spectraBody {
+  height: 459px;
+  width: 580px;
 }
 
 .chartPlotList {

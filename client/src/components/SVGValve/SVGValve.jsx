@@ -1,4 +1,4 @@
-function SVG_valve() {
+function SVGValve() {
   return (
     <svg width="51" height="31"
       viewBox="0 0 51 31"
@@ -20,4 +20,4 @@ function SVG_valve() {
   );
 }
 
-export default SVG_valve;
+export default SVGValve;

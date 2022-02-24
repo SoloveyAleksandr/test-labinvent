@@ -1,13 +1,11 @@
 import Widget from '../../components/Widget/Widget';
-import samplerIcon from '../../images/sampler-icon.svg';
-import bottleFilling from '../../images/bottle_filling_sprite.svg';
 import arrowIcon from '../../images/arrow.svg';
 import Method from '../../components/Method/Method';
 import Image from '../../components/Image/Image';
 import ModalWindow from '../../components/ModalWindow/ModalWindow';
 import { v4 as uuid } from 'uuid';
 import axios from 'axios';
-import Btn_big from '../../components/Btn_big/Btn_big';
+import BtnBig from '../../components/BtnBig/BtnBig';
 import InfoBox from '../../components/InfoBox/InfoBox';
 import Icon from '../../components/Icon/Icon';
 import chart from '../../images/live-chart.png';
@@ -37,11 +35,11 @@ import {
   toggleControlModeStatus,
   saveCurrentMethodName,
 } from '../../store';
+import SVGBottle from '../../components/SVGBottle/SVGBottle';
+import SVGValve from '../../components/SVGValve/SVGValve';
+import SVGSampler from '../../components/SVGSampler/SVGSampler';
 
 import styles from './MethodPage.module.css';
-import SVG_bottle from '../../components/SVG_bottle/SVG_bottle';
-import SVG_valve from '../../components/SVG_valve/SVG_valve';
-import SVG_sampler from '../../components/SVG_sampler/SVG_sampler';
 
 function MethodPage() {
   const reduxDispatch = useDispatch();
@@ -63,7 +61,7 @@ function MethodPage() {
         console.log(err);
         setSpinerIsActive(false);
       })
-  }, [])
+  }, []);
 
   function addStep() {
     reduxDispatch(addTableStap({
@@ -171,7 +169,7 @@ function MethodPage() {
               value={store.currentMethod.name || ''}
               onChange={(e) => reduxDispatch(setCurrentMethodName(e.target.value))} />
           </div>
-          <Btn_big
+          <BtnBig
             isFill={true}
             text={'Save'}
             handleClick={saveMethod} />
@@ -199,7 +197,7 @@ function MethodPage() {
                 title={'Sampler'}
                 widgetColor={'#1a9022'}
               >
-                <SVG_sampler />
+                <SVGSampler />
               </Widget>
             </li>
             <li className={styles.widgetsListItem}>
@@ -207,8 +205,17 @@ function MethodPage() {
                 title={'Quat. Pump'}
                 widgetColor={'#f5ad3c'}
               >
-                <SVG_bottle />
-                <SVG_valve />
+                <div className={styles.widgetsListItemWrapper}>
+                  <div className={styles.widgetsListItemBody}>
+                    <div className={styles.svgBottleWrapper}>
+                      <span className={styles.svgBottle_1}></span>
+                      <span className={styles.svgBottle_2}></span>
+                      <SVGBottle />
+                    </div>
+                    <SVGValve />
+                  </div>
+                  <span className={styles.widgetsListItemInfo}>1.000 ml/min</span>
+                </div>
               </Widget>
             </li>
           </ul>
@@ -234,60 +241,69 @@ function MethodPage() {
           </div>
 
           <div className={styles.infoBoxWrapper}>
-            <InfoBox
-              title={'live chart'}>
-              <div className={styles.chartBox}>
-                <div className={styles.chartWrapper}>
-                  <ul className={styles.chartPlotList}>
-                    <li className={styles.chartPlotListItem}>
-                      <Icon
-                        icon={'colorIcon'}
-                        color={'#1ba39c'}
-                        size={20} />
-                      <span>
-                        Plot
-                      </span>
+            <div className={styles.chartWrapper}>
+              <InfoBox
+                title={'live chart'}>
+                <div className={styles.chartBox}>
+                  <div className={styles.chartWrapper}>
+                    <ul className={styles.chartPlotList}>
+                      <li className={styles.chartPlotListItem}>
+                        <Icon
+                          icon={'colorIcon'}
+                          color={'#1ba39c'}
+                          size={20} />
+                        <span>
+                          Plot
+                        </span>
+                      </li>
+                      <li className={styles.chartPlotListItem}>
+                        <Icon
+                          icon={'colorIcon'}
+                          color={'#913d88'}
+                          size={20} />
+                        <span>
+                          Plot
+                        </span>
+                      </li>
+                      <li className={styles.chartPlotListItem}>
+                        <Icon
+                          icon={'colorIcon'}
+                          color={'#f5ad3c'}
+                          size={20} />
+                        <span>
+                          Plot
+                        </span>
+                      </li>
+                    </ul>
+                    <div className={styles.chart}>
+                      <Image
+                        image={chart} />
+                    </div>
+                  </div>
+                  <ul className={styles.chartViewBtnsList}>
+                    <li className={styles.chartViewBtn}>
+                      <Image
+                        image={legendIcon} />
                     </li>
-                    <li className={styles.chartPlotListItem}>
-                      <Icon
-                        icon={'colorIcon'}
-                        color={'#913d88'}
-                        size={20} />
-                      <span>
-                        Plot
-                      </span>
+                    <li className={styles.chartViewBtn}>
+                      <Image
+                        image={settingsIcon} />
                     </li>
-                    <li className={styles.chartPlotListItem}>
-                      <Icon
-                        icon={'colorIcon'}
-                        color={'#f5ad3c'}
-                        size={20} />
-                      <span>
-                        Plot
-                      </span>
+                    <li className={styles.chartViewBtn}>
+                      <Image
+                        image={balanceIcon} />
                     </li>
                   </ul>
-                  <div className={styles.chart}>
-                    <Image
-                      image={chart} />
-                  </div>
                 </div>
-                <ul className={styles.chartViewBtnsList}>
-                  <li className={styles.chartViewBtn}>
-                    <Image
-                      image={legendIcon} />
-                  </li>
-                  <li className={styles.chartViewBtn}>
-                    <Image
-                      image={settingsIcon} />
-                  </li>
-                  <li className={styles.chartViewBtn}>
-                    <Image
-                      image={balanceIcon} />
-                  </li>
-                </ul>
-              </div>
-            </InfoBox>
+              </InfoBox>
+            </div>
+
+            <div className={styles.spectraWrapper}>
+              <InfoBox
+                title={'spectra'}>
+                <div className={styles.spectraBody}></div>
+              </InfoBox>
+            </div>
           </div>
 
         </div>

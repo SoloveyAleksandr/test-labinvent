@@ -1,0 +1,29 @@
+.tableCell {
+  padding: 5px;
+  border: 1px solid #979da5;
+}
+
+.tableCell input {
+  font-weight: 500;
+}
+
+.textInput {
+  margin: 0;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+.textInput:focus {
+  outline: 1px solid #61a1c4;
+}
+
+.alignCenter input {
+  text-align: center;
+}
+
+.alignRight input {
+  text-align: right;
+}

@@ -88,11 +88,15 @@
 }
 
 .instrumentsList li + li {
-  margin: 0;
+  margin: 10px 0 0 0;
 }
 
 .instrumentsListItem {
   min-width: 100px;
+}
+
+.instrumentsListItem:hover {
+  color: #2575aa;
 }
 
 .userControlsList {

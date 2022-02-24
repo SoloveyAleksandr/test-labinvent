@@ -3,7 +3,7 @@ import styles from './Widget.module.css';
 function Widget({
   title,
   widgetColor,
-  children
+  children,
 }) {
   return (
     <div className={styles.widget}>

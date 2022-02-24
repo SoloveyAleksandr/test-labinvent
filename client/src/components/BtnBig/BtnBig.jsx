@@ -1,6 +1,6 @@
-import styles from './Btn_big.module.css';
+import styles from './BtnBig.module.css';
 
-function Btn_big({
+function BtnBig({
     isFill = true,
     text = 'button',
     handleClick,
@@ -16,4 +16,4 @@ function Btn_big({
     );
 }
 
-export default Btn_big;
+export default BtnBig;

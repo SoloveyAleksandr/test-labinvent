@@ -1,5 +1,4 @@
 import Icon from '../Icon/Icon';
-import arrow from '../../images/arrow.svg';
 
 import styles from './DropdownBtn.module.css';
 
@@ -14,7 +13,9 @@ function DropdownBtn({
         {title}
       </span>
       <span className={styles.btnIcon}>
-        <Icon image={arrow} />
+        <Icon
+          icon={'arrowIcon'}
+          size={24} />
       </span>
       <div className={styles.content}>
         {children}

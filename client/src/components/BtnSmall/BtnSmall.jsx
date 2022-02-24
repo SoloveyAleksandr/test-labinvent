@@ -1,7 +1,7 @@
 import Icon from '../Icon/Icon';
-import styles from './Btn_small.module.css';
+import styles from './BtnSmall.module.css';
 
-function Btn_small({
+function BtnSmall({
     isFill = false,
     handleClick,
     ...props
@@ -17,4 +17,4 @@ function Btn_small({
     );
 }
 
-export default Btn_small;
+export default BtnSmall;

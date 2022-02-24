@@ -11,7 +11,7 @@ function RunStateBtn({
                 <span className={styles.runBtnIcon}>
                     <Icon icon={'playIcon'} className={styles.runBtnIcon} size={16} />
                 </span>
-                <span>RUN</span>
+                RUN
             </ button>
         );
     } else {

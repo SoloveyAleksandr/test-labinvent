@@ -1,22 +1,20 @@
-import { useState } from 'react';
+import TextTableCell from '../TextTableCell/TextTableCell';
 import styles from './TableRow.module.css';
 
 function TableRow({
     selected,
-    ramp,
-    rate,
-    value,
-    holdTime,
-    runTime,
+    ramp = '(initial)',
+    rate = '',
+    value = 16.849,
+    holdTime = 0,
+    runTime = 0,
     changeSelectedInput,
     changeRampInput,
     changeRateInput,
     changeValueInput,
     changeHoldTimeInput,
     changeRunTimeInput,
-    onblur,
 }) {
-    // const [disabled, setDisabled] = useState(true);
 
     return (
         <tr className={styles.tableRow}>
@@ -26,7 +24,33 @@ function TableRow({
                     defaultChecked={selected} type="radio"
                     name='tableRadio' />
             </td>
-            <td className={`${styles.tableCell} ${styles.alignCenter}`}>
+
+            <TextTableCell
+                value={ramp}
+                onChange={(value) => changeRampInput(value)} />
+
+            <TextTableCell
+                alignCenter={false}
+                value={rate}
+                onChange={(value) => changeRateInput(value)} />
+
+            <TextTableCell
+                alignCenter={false}
+                value={value}
+                onChange={(value) => changeValueInput(value)} />
+
+            <TextTableCell
+                alignCenter={false}
+                value={holdTime}
+                onChange={(value) => changeHoldTimeInput(value)} />
+
+            <TextTableCell
+                alignCenter={false}
+                value={runTime}
+                onChange={(value) => changeRunTimeInput(value)} />
+
+            {/* <td
+                className={`${styles.tableCell} ${styles.alignCenter}`}>
                 <input
                     className={styles.textInput}
                     onChange={(e) => changeRampInput(e.target.value)}
@@ -61,7 +85,7 @@ function TableRow({
                     onChange={(e) => changeRunTimeInput(e.target.value)}
                     type="text"
                     value={runTime || ''} />
-            </td>
+            </td> */}
         </tr>
     );
 }
