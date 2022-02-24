@@ -19,6 +19,7 @@
 
 .widgetsListItem {
   margin-bottom: 15px;
+  position: relative;
 }
 
 .widgetsListItemWrapper {
@@ -242,4 +243,10 @@
 
 .methodWrapper {
   width: 100%;
+}
+
+.termostatWrapper {
+  position: absolute;
+  top: 53px;
+  right: 27px;
 }

@@ -3,6 +3,7 @@ import arrowIcon from '../../images/arrow.svg';
 import Method from '../../components/Method/Method';
 import Image from '../../components/Image/Image';
 import ModalWindow from '../../components/ModalWindow/ModalWindow';
+import termostat from '../../images/thermostat.png';
 import { v4 as uuid } from 'uuid';
 import axios from 'axios';
 import BtnBig from '../../components/BtnBig/BtnBig';
@@ -198,6 +199,11 @@ function MethodPage() {
                 widgetColor={'#1a9022'}
               >
                 <SVGSampler />
+
+                <div className={styles.termostatWrapper}>
+                  <Image
+                    image={termostat} />
+                </div>
               </Widget>
             </li>
             <li className={styles.widgetsListItem}>

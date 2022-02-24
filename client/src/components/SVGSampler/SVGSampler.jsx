@@ -111,9 +111,9 @@ function SVGSampler() {
         data-name="plus-circle"
         fill="#12a9eb"
         transform="translate(87, 75) scale(0.6)">
-        <rect width="24" height="24" opacity="0" fill="#12a9eb" class="color000 svgShape">
+        <rect width="24" height="24" opacity="0" fill="#12a9eb" className="color000 svgShape">
         </rect>
-        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3 11h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2h2a1 1 0 0 1 0 2z" fill="#12a9eb" class="color000 svgShape">
+        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3 11h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2h2a1 1 0 0 1 0 2z" fill="#12a9eb" className="color000 svgShape">
         </path>
       </g>
 
